@@ -1,0 +1,911 @@
+*{
+    font-family: 'poppins', 'segoe UI';
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+@keyframes slideIn{
+    from{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes slideInRight{
+    from{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes navSlide{
+    from{
+        transform: translatey(-100px);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+/* ------------------------nav bar------------------------------- */
+nav{
+    position: fixed;
+    top: 0px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    width: 100%;
+    z-index: 100;
+    animation: navSlide 2s;
+}
+.nav2 ul{
+    display: flex;
+    list-style: none;
+}
+.nav2 ul li{
+    margin-right: 40px;
+    font-size: 17px;
+    line-height: 0;
+    font-weight: 400;
+}
+.nav2 ul li a{
+    text-decoration: none;
+    color: black;
+}
+.nav2 ul li a:hover{
+    color: #FF3535;
+    transition: all .4s ease 0s;
+}
+.nav2 ul li span{
+    font-size: 10px;
+    background-color: #FF3535;
+    padding: 7px 5px;
+    color: #fff;
+    position: absolute;
+    top: 17px;
+    margin-left: -15px;
+}
+header button{
+    padding: 10px 2%;
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid black;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+}
+header button:hover{
+    background-color: #FF3535;
+    border-color: #FF3535;
+    color: white;
+}
+nav .toggleBtn{
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+nav .toggleBtn .fa-solid{
+    font-size: 24px;
+    color: #000;
+    transition: color .4s ease;
+}
+nav .toggleBtn .fa-solid:hover{
+    color: #FF3535;
+}
+
+/* ------------Dropdown menu--------------- */
+.dropdown-menu{
+    position: fixed;
+    display: none;
+    right: 1rem;
+    top: 70px;
+    height: 0;
+    width: 300px;
+    background-color: #fff;
+    box-shadow:  0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: height 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropSect{
+    padding: 30px 50px;
+}
+.dropdown-menu.open{
+    height: 303px;
+}
+.dropSect ul{
+    display: block;
+    text-align: center;
+    margin: 0px;
+}
+.dropSect ul li{
+    margin-right: 0px;
+    margin-bottom: 40px;
+}
+#dropBtn{
+    width: 90%;
+    margin-left: 10px;
+}
+/* -----i need to finish the drop down menu--------- */
+
+/* -------------Media Queries for nav bar---------------- */
+@media(max-width: 1200px) {
+    nav{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    nav img{
+        width: 100px;
+    }
+}
+@media(max-width: 1070px) {
+    .nav2 ul{
+        margin-left: -30px;
+    }
+    .nav2 ul li:last-child{
+        margin-right: 10px;
+    }
+    .nav2 ul li{
+        font-size: 16px;
+    }
+}
+@media(max-width: 950px) {
+    nav{
+        padding-left: 25px;
+        padding-right: 30px;
+    }
+    .nav2 ul li{
+        font-size: 15px;
+    }
+    #navButton{
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+@media(max-width: 850px){
+    nav section, #navButton{
+        display: none;
+    }
+    nav .toggleBtn{
+        display: block;
+    }
+    .dropdown-menu{
+        display: block;
+        z-index: 3;
+    }
+    nav{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 50px;
+        padding-right: 40px;
+    }
+}
+@media(max-width: 600px){
+    nav{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+@media(max-width: 576px){
+    .dropdown-menu{
+        left: 0.6rem;
+        width: unset;
+        background-color: #fff;
+    }
+}
+
+/* ------------------first section styling--------------------- */
+.firstSect{
+    padding: 0px 10% 20px;
+    min-height: fit-content;
+    background-color: #F6F6F6;
+}
+.slide1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+.slide1 img{
+    width: 92%;
+    margin-top: 35px;
+    margin-left: 90px;
+    animation: slideInRight 2s;
+}
+.slide1 .firstSect1 h1{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+    color: #292929;
+    margin-bottom: 35px;
+    animation: slideIn 2s;
+}
+.slide1 .firstSect1 p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #1f2226;
+    margin-bottom: 30px;
+    animation: slideIn 3s;
+}
+.slide1 .firstSect1 button{
+    line-height: 13px;
+    padding: 18px 40px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid black;
+    background-color: #F6F6F6;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+    animation: slideIn 4s;
+}
+.slide1 .firstSect1 button:hover{
+        background-color: #FF3535;
+        border-color: #FF3535;
+        color: white;
+}
+
+/* -------media queries for the first section------------------ */
+@media(max-width: 1200px) {
+    .firstSect{
+        padding-left: 5%;
+    }
+    .slide1 .firstSect1 h1{
+        font-size: 38px;
+        line-height: 42px;
+        margin-bottom: 35px;
+    }
+    .slide1 img{
+        width: 80%;
+    }
+}
+@media(max-width: 950px){
+    .slide1 .firstSect1 h1{
+        font-size: 28px;
+        line-height: 30px;
+        margin-bottom: 35px;
+    }
+    .slide1 .firstSect1 p{
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+@media(max-width: 770px){
+    .slide1 img{
+        width: 270px;
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    .slide1{
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .slide1 .firstSect1 p{
+        width: 270px;
+    }
+}
+@media(max-width: 690px){
+    .slide1{
+    display: block;
+    }
+    .slide1 .firstSect1 p{
+        width: 80%;
+    }
+    .slide1 img{
+        width: 100%;
+    }
+    .firstSect{
+        padding-bottom: 0px;
+    }
+}
+
+/* ---------------second section styling-------------*/
+.secondSect{
+    padding: 100px 4% 90px;
+    display: flex;
+    gap: 125px;
+    justify-content: center;
+    align-items: center;
+}
+.secondSect h3{
+    position: absolute;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 36px;
+    z-index: 1;
+    color: #000;
+}
+.secondSect1, .sect2p1, .sect2p2{
+    overflow: hidden;
+}
+.secondSect1 h3{
+    margin-top: 30px;
+    margin-left: 44px;
+}
+.sect2p1 h3{
+    margin-top: 30px;
+    margin-left: 45px;
+}
+.sect2p2 h3{
+    margin-top: 230px;
+    margin-left: 45px;
+}
+.secondSect img{
+    transition: scale .5s ease;
+    width: 100%;
+}
+.secondSect img:hover{
+    scale: 1.12;
+}
+.secondSect2{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+/* --------------all media queries for second section---------------- */
+
+@media(max-width: 1200px){
+    .sect2p2 h3{
+        margin-top: 11rem;
+        margin-left: 45px;
+    }
+}
+@media(max-width: 930px){
+    .secondSect h3{
+        font-size: 21px;
+        line-height: 21px;
+    }
+    .secondSect1 h3{
+        margin-top: 30px;
+        margin-left: 44px;
+    }
+    .sect2p1 h3{
+        margin-top: 30px;
+        margin-left: 45px;
+    }
+    .sect2p2 h3{
+        margin-top: 10.7rem;
+        margin-left: 45px;
+    }
+}
+@media(max-width: 850px){
+    .secondSect2{
+        gap: 45px;
+    }
+    .secondSect{
+        gap: 40px;
+    }
+    .sect2p2 h3{
+        margin-top: 10rem;
+    }
+}
+@media(max-width: 720px){
+    .secondSect{
+        display: block;
+        padding: 100px 10% 65px;
+    }
+    .secondSect1{
+        max-width: 80vw;
+        margin-left: 0%;
+        margin-bottom: 50px;
+    }
+    .secondSect2{
+        max-width: 80vw;
+        margin-left: 0%;
+    }
+    .sect2p2 h3{
+        margin-top: 15rem;
+    }
+}
+@media(max-width: 620px){
+    .secondSect{
+        padding: 100px 9% 65px;
+    }
+    .secondSect1{
+        max-width: 80vw;
+    }
+    .secondSect2{
+        max-width: 80vw;
+        margin-left: 0%;
+    }
+    .sect2p2 h3{
+        margin-top: 10rem;
+    }
+}
+@media(max-width: 420px){
+    .sect2p2 h3{
+        margin-top: 7.7rem;
+    }
+}
+
+/* -------------------third section styling------------------------- */
+.thirdSect{
+    padding: 30px 0%;
+}
+.thirdSect1{
+    margin: 0px 10% 50px;
+    text-align: center;
+}
+.thirdSect1 h2{
+    font-size: 30px;
+    font-weight: 500;
+    color: #1f2226;
+    line-height: 36px;
+    margin-bottom: 17px;
+}
+.thirdSect1 p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #5a5a5a;
+    width: 40%;
+    margin-left: 30%;
+}
+.thirdSect2{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+.thirdSect2 img{
+    width: 280px;
+}
+.sect3p1, .sect3p2{
+    display: flex;
+}
+.sect3p1{
+    margin-right: 2%;
+}
+.productCard1, .productCard2{
+    border: 1px solid #5a5a5a14;  
+    padding-bottom: 30px;
+    transition: all .5s ease;
+}
+.productCard1:first-child{
+    margin-right: 2%;
+}
+.productCard2:first-child{
+    margin-right: 2%;
+}
+.productCard1:hover{
+    scale: 1.03;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.107), 0 6px 20px 0 rgba(0, 0, 0, 0.129);
+}
+.productCard2:hover{
+    scale: 1.03;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.107), 0 6px 20px 0 rgba(0, 0, 0, 0.129);
+}
+.cardInfo{
+    padding: 20px 20px 0px;
+}
+.cardInfo p{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+.cardInfo strong{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #FF3535;
+    padding-right: 5px;
+}
+.cardInfo span{
+    margin-left: 30%;
+}
+.cardInfo span i{
+    color: #5a5a5a;
+}
+.cardInfo #price{
+    color: #4a4a4a;
+    display: inline;
+    text-decoration: line-through;
+    font-size: 12px;
+    padding: 0px;
+    position: absolute;
+    margin-top: -1px;
+}
+.cardInfo i{
+    color: #ff3535ab;
+    font-size: 13px;
+}
+.thirdSectBtn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.thirdSect button{
+    line-height: 13px;
+    margin-top: 40px;
+    padding: 18px 40px;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid black;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+}
+.thirdSect button:hover{
+        background-color: #FF3535;
+        border-color: #FF3535;
+        color: white;
+}
+
+/* ----------media Queries for third section--------- */
+@media(max-width: 1200px){
+    .thirdSect2{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 0px;
+    }
+    .sect3p1{
+        margin-bottom: 4%;
+        margin-right: 0%;
+    }
+    .productCard1:first-child{
+        margin-right: 4%;
+    }
+    .productCard2:first-child{
+        margin-right: 4%;
+    }
+}
+@media(max-width: 1200px){
+    .thirdSect1 p{
+        width: 60%;
+        margin-left: 20%;
+    }
+}
+@media(max-width: 630px){
+    .sect3p1, .sect3p2{
+        flex-direction: column;
+    }
+    .thirdSect1 p{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .productCard1:first-child{
+        margin-bottom: 4%;
+        margin-right: 0%;
+    }
+    .productCard2:first-child{
+        margin-bottom: 4%;
+        margin-right: 0%;
+    }
+    .thirdSect1 h2{
+        font-size: 27px;
+    }
+    .thirdSect2{
+        margin-left: 20px;
+    }
+    .thirdSect button{
+        margin-top: 20px;
+    }
+}
+
+/* --------------fourth section styling-------------------- */
+.fourthSect{
+    padding: 80px 10px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.fourthSect h4{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #1f2226;
+    margin-bottom: 30px;
+}
+.fourthSect h4::before{
+    position: absolute;
+    content: "";
+    background-color: #4d5e7c;
+    width: 50px;
+    height: 3px;
+    margin-top: 36px;
+}
+.fourthSect p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #1f2226;
+}
+.fourthSect div{
+    padding-bottom: 30px;
+}
+.fourthSect section{
+    display: inline-flex;
+    flex-direction: column;
+}
+.fourthSect img{
+    margin-bottom: -20px;
+    margin-right: 20px;
+}
+
+/* ---------------media queries for fourth section---------------- */
+@media(max-width: 1290px){
+    .fourthSect{
+        justify-content: space-between;
+    }
+}
+@media(max-width: 1200px){
+    .fourthSect{
+        justify-content: space-evenly;
+    }
+}
+@media(max-width: 980px){
+    .fourthSect{
+        justify-content: center;
+    }
+    .fourthSect div{
+        margin-right: 30px;
+    }
+    .fourthSect h4{
+        font-size: 16px;
+        line-height: 19px;
+        color: #1f2226;
+        margin-bottom: 30px;
+    }
+    .fourthSect p{
+        font-size: 13px;
+    }
+    .fourthSect img{
+        width: 50px;
+        margin-right: 10px;
+    }
+}
+@media(max-width: 801px){
+    .fourthSect{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .fourthSect2{
+        padding-right: 41px;
+    }
+    .fourthSect3{
+        padding-right: 58px;
+    }
+    .fourthSect h4{
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .fourthSect p{
+        font-size: 16px;
+    }
+    .fourthSect img{
+        width: unset;
+        margin-right: 20px;
+    }
+}
+
+/* -----------------------footer styling------------------------ */
+/* ----------footer first section-------- */
+footer{
+    padding: 100px 10% 0px;
+}
+.footerFirstSect{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.footerFirstSect .footSect1 img{
+    margin-bottom: 30px;
+}
+.footerFirstSect .footSect1 p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #5a5a5a;
+    width: 83%;
+    margin-bottom: 15px;
+}
+.footerFirstSect .footSect1 input{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #919090;
+    padding: 13px 10px 13px 28px;
+    width: 80%;
+    outline: none;
+    border: 1px solid black;
+}
+.footerFirstSect .footSect1 section{
+    display: flex;
+}
+.footerFirstSect .footSect1 button{
+    padding: 16px 21px 13px;
+    background-color: #000;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 23px;
+    margin-left: -1%;
+    transition: background-color .4s ease;
+}
+.footerFirstSect .footSect1 button:hover{
+    background-color: #FF3535;
+}
+.footSect2{
+    display: flex;
+}
+.footSect2 ul{
+    margin-right: 100px;
+}
+.footSect2 ul:last-child{
+    margin-right: 0px;
+}
+.footSect2 ul h4{
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #444444;
+    list-style: none;
+    padding-bottom: 35px;
+}
+.footSect2 ul li{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #666666;
+    list-style: none;
+    padding-bottom: 26px;
+    cursor: pointer;
+    transition: color .4s ease;
+}
+.footSect2 ul li:hover{
+    color: #FF3535;
+}
+
+/* --------media queries for the footer first section */
+@media (max-width: 1200px) {
+    footer{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .footSect1 img{
+        width: 100px;
+    }
+}
+@media (max-width: 950px){
+    footer{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .footerFirstSect{
+        flex-direction: column;
+    }
+    .footSect1{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding-bottom: 50px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .footerFirstSect .footSect1 input{
+        width: 100%;
+    }
+    .footSect2 ul{
+        margin-right: 0px;
+    }
+    .footSect2{
+        justify-content: space-between;
+        padding: 20px 70px;
+    }
+}
+@media (max-width: 650px){
+    .footSect1{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 50px;
+        padding-left: 20px;
+        padding-right: 50px;
+    }
+    .footerFirstSect .footSect1 input{
+        width: 100%;
+    }
+    .footSect2{
+        padding: 20px 30px 20px 0px;
+    }
+    .footSect2 ul h4{
+        font-size: 15px;
+        padding-bottom: 30px;
+    }
+    .footSect2 ul li{
+        font-size: 13px;
+        padding-bottom: 21px;
+    }
+}
+@media (max-width: 400px){
+    .footSect2{
+        flex-wrap: wrap;
+    }
+    .footSect2 ul{
+        margin-bottom: 30px;
+    }
+}
+
+/* ----------footer second section-------- */
+.footerSecondSect{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    border-top: 1px solid #66666632;
+    padding: 40px 10% 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footerSecondSect p{
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 16px;
+    color: #444444;
+}
+.footerSecondSect img{
+    cursor: pointer;
+}
+#lastPara{
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+    margin-left: -10px;
+    background-color: #FF3535;
+    padding: 55px 15px 10px;
+    border-radius: 4px 4px 0px 0px;
+    transform: translateY(100px);
+    transition: all .8s ease;
+    scale: .5;
+    
+}
+#lastPara:hover{
+    transform: translateY(0px);
+    padding: 10px 15px 10px;
+    scale: 1;
+}
+#lastPara i{
+    color: #ffffff;
+}
+
+/* --------media queries for the footer second section */
+@media (max-width: 1200px) {
+    .footerSecondSect{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+@media (max-width: 950px) {
+    .footerSecondSect{
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: space-evenly
+    }
+}
+@media (max-width:620px) {
+    .footerSecondSect{
+        flex-direction: column;
+    }
+    .footerSecondSect p{
+        margin-bottom: 20px;
+    }
+}
+
